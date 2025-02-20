@@ -18,13 +18,7 @@ const CommonLayout = ({ children }) => {
 
   return (
     <Layout style={{ gap: 24 }}>
-      <Header
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          background: '#fff',
-        }}
-      >
+      <Header className={styles.header}>
         <NavMenu className={styles.menu} />
         <Link href={'/shopping-cart'}>
           <Badge count={length}>

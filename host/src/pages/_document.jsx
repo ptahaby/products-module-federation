@@ -9,9 +9,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html suppressHydrationWarning>
+      <Html>
         <Head />
-        <body suppressHydrationWarning>
+        <body>
           <Main />
           <NextScript />
         </body>

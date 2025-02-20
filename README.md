@@ -17,3 +17,5 @@ There are 3 applications:
 - `products` on `localhost:3001`
 
 - Navigate to `localhost:3000` - Products and shopping cart must be loaded from remote applications.
+
+- You can add/delete cards

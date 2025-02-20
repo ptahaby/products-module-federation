@@ -3,8 +3,6 @@ import Basket from '@/components/Basket';
 
 export default function ShoppingCard() {
   return (
-    <>
       <Basket />
-    </>
   );
 }
