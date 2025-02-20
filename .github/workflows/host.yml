@@ -1,0 +1,59 @@
+name: Build and Lint Host Project
+
+on:
+  push:
+    paths:
+      - "host/**"
+  pull_request:
+    paths:
+      - "host/**"
+
+jobs:
+  install-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Cache Node modules
+        uses: actions/cache@v4
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install Dependencies
+        run: yarn install
+
+  lint-and-build:
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Cache Node modules
+        uses: actions/cache@v4
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Lint and Build Host
+        run: |
+          yarn workspace host lint
+          yarn workspace host build
+
+      - name: Archive Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: shared-artifacts
+          path: host/dist

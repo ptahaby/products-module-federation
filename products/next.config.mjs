@@ -27,26 +27,26 @@ const nextConfig = {
           './productsApi': './src/redux/api',
         },
         shared: {
-          react: {
-            eager: true,
-            singleton: true,
-            requiredVersion: false,  
-          },
-          'react-dom': {
-            eager: true,
-            singleton: true,
-            requiredVersion: false,
-          },
-          antd: {
-            eager: true,
-            singleton: true,
-            requiredVersion: false,
-          },
-          'react-redux': {
-            eager: true,
-            singleton: true,
-            requiredVersion: false,
-          },
+          // react: {
+          //   eager: true,
+          //   singleton: true,
+          //   requiredVersion: false,
+          // },
+          // 'react-dom': {
+          //   eager: true,
+          //   singleton: true,
+          //   requiredVersion: false,
+          // },
+          // antd: {
+          //   eager: true,
+          //   singleton: true,
+          //   requiredVersion: false,
+          // },
+          // 'react-redux': {
+          //   eager: true,
+          //   singleton: true,
+          //   requiredVersion: false,
+          // },
         },
       })
     );
