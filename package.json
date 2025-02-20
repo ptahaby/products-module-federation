@@ -1,15 +1,24 @@
 {
   "name": "products-module-federation",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"cd basket; npm run dev\" \"cd products; npm run dev\" \"cd host; npm run dev\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "ptahaby <ptaha005@gmail.com>",
   "license": "ISC",
   "description": "",
+  "workspaces": [
+    "host",
+    "basket",
+    "products"
+  ],
   "devDependencies": {
-    "concurrently": "^9.1.2"
-  }
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  },
+  "repository": "git@github.com:ptahaby/products-module-federation.git",
+  "dependencies": {}
 }

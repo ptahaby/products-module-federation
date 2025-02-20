@@ -23,12 +23,7 @@ const nextConfig = {
         },
         filename: `static/${isServer ? 'ssr' : 'chunks'}/remoteEntry.js`,
         extraOptions: {},
-        shared: {
-          // react: {
-          //   singleton: true,
-          // },
-          // 'react-dom': { singleton: true },
-        },
+        shared: {},
       })
     );
 
