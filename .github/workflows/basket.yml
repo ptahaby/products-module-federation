@@ -47,13 +47,13 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Test and Build Cards
+      - name: Lint and Build Basket
         run: |
           yarn workspace basket lint
           yarn workspace basket build
 
       - name: Archive Build Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: shared-artifacts
           path: basket/dist
