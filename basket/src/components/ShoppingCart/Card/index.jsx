@@ -20,13 +20,7 @@ const Item = ({ item }) => {
     >
       <Flex justify="space-between">
         <img alt="card" src={item.image} className={styles.image} />
-        <Flex
-          vertical
-          flex={1}
-          style={{
-            padding: 32,
-          }}
-        >
+        <Flex vertical flex={1} style={{ padding: 32 }}>
           <Row gutter={[16, 16]}>
             <Col xs={24} md={20}>
               <Typography.Title level={3}>{item.title}</Typography.Title>
