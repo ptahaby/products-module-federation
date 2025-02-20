@@ -28,3 +28,32 @@ jobs:
 
       - name: Install Dependencies
         run: yarn install
+
+  lint-and-build:
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Cache Node modules
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Test and Build Cards
+        run: |
+          yarn workspace basket lint
+          yarn workspace basket build
+
+      - name: Archive Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: shared-artifacts
+          path: basket/dist
