@@ -52,8 +52,8 @@ jobs:
           yarn workspace products lint
           yarn workspace products build
 
-      - name: Archive Build Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: shared-artifacts
-          path: products/dist
+      # - name: Archive Build Artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: shared-artifacts
+      #     path: products/.next
