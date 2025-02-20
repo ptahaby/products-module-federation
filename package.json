@@ -1,0 +1,15 @@
+{
+  "name": "products-module-federation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd basket; npm run dev\" \"cd products; npm run dev\" \"cd host; npm run dev\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
