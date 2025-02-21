@@ -1,0 +1,11 @@
+version: "2.0"
+services:
+  basket-app:
+    build:
+      context: ./basket
+    ports:
+      - "3002:3002"
+    environment:
+      NODE_ENV: development
+    container_name: basket-app
+    stdin_open: true
