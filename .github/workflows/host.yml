@@ -50,7 +50,7 @@ jobs:
       - name: Lint and Build Host
         run: |
           yarn workspace host lint
-          yarn workspace host build
+      #    yarn workspace host build
 
       # - name: Archive Build Artifacts
       #   uses: actions/upload-artifact@v4

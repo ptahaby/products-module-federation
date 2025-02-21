@@ -23,10 +23,10 @@ const Item = ({ item }) => {
         <Flex vertical flex={1} style={{ padding: 32 }}>
           <Row gutter={[16, 16]}>
             <Col xs={24} md={20}>
-              <Typography.Title level={3}>{item.title}</Typography.Title>
+              <Typography.Title level={4}>{item.title}</Typography.Title>
             </Col>
             <Col xs={24} md={4}>
-              <Typography.Title level={3}>${item.price}</Typography.Title>
+              <Typography.Title level={4}>${item.price}</Typography.Title>
             </Col>
           </Row>
           <Flex justify="flex-end">
